@@ -13,11 +13,11 @@ import co.edu.eafit.teis.sconnection.search.presenter.search_presenter;
 
 public class search_view extends AppCompatActivity {
 
-    ListView lv;
-    EditText et;
-    TextView tv;
-    Button bt;
-    search_presenter sp;
+    private ListView lv;
+    private EditText et;
+    private TextView tv;
+    private Button bt;
+    private search_presenter sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +27,14 @@ public class search_view extends AppCompatActivity {
         et = (EditText) findViewById(R.id.search_view_input);
         tv = (TextView) findViewById(R.id.search_view_title);
         bt = (Button)   findViewById(R.id.search_view_button);
-        sp = new search_presenter();
+        sp = new search_presenter(this);
     }
 
     public void onButtonClick(View view){
-        sp.search();
+        sp.search(et.getText().toString());
+    }
+
+    public ListView getListView(){
+        return lv;
     }
 }

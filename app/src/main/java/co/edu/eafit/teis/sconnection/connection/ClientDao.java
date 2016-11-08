@@ -40,7 +40,7 @@ public class ClientDao {
         sendRequest(url);
     }
 
-    public void sendSearchRequest(Client client) {
+    public void sendSearchRequest() {
         String url = "https://sc-b.herokuapp.com/api/v1/users/?only=provider";
         sendRequest(url);
     }
