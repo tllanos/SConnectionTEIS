@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">SConnection</string>
+    <string name="title_activity_sign_up_view">SignUpView</string>
+    <string name="user_name_tv">Credentials</string>
+    <string name="user_name_et">Username</string>
+    <string name="user_password_et">Password</string>
+    <string name="client_type_tv">Client type</string>
+    <string name="user_rb">User</string>
+    <string name="provider_rb">Provider</string>
+    <string name="register_b">Register</string>
 </resources>
