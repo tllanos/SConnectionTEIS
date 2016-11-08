@@ -24,21 +24,28 @@ public class SignUpView extends AppCompatActivity {
         final EditText username = (EditText) findViewById(R.id.user_name_et);
         final EditText password = (EditText) findViewById(R.id.user_password_et);
         final RadioButton user_rb = (RadioButton) findViewById(R.id.user_rb);
-        final RadioButton provider_rb = (RadioButton) findViewById(R.id.provider_rb);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SignUpPresenter sup = new SignUpPresenter(
+                callPresenter(
                         username.getText().toString(),
                         password.getText().toString(),
-                        user_rb.isChecked(),
-                        provider_rb.isChecked()
+                        user_rb.isChecked()
                 );
-                sup.doSignUp();
             }
         });
+    }
+
+    private void callPresenter(String username, String password, boolean isUser) {
+        SignUpPresenter sup = new SignUpPresenter(
+                this,
+                username,
+                password,
+                !isUser
+        );
+        sup.doSignUp();
     }
 
 }
