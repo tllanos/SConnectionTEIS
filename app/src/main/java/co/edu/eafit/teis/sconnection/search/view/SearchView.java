@@ -9,15 +9,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import co.edu.eafit.teis.sconnection.R;
-import co.edu.eafit.teis.sconnection.search.presenter.search_presenter;
+import co.edu.eafit.teis.sconnection.search.presenter.SearchPresenter;
 
-public class search_view extends AppCompatActivity {
+public class SearchView extends AppCompatActivity {
 
     private ListView lv;
     private EditText et;
     private TextView tv;
     private Button bt;
-    private search_presenter sp;
+    private SearchPresenter sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class search_view extends AppCompatActivity {
         et = (EditText) findViewById(R.id.search_view_input);
         tv = (TextView) findViewById(R.id.search_view_title);
         bt = (Button)   findViewById(R.id.search_view_button);
-        sp = new search_presenter(this);
+        sp = new SearchPresenter(this);
     }
 
     public void onButtonClick(View view){

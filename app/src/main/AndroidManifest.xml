@@ -19,7 +19,7 @@
             android:name=".signup.view.SignUpView"
             android:label="@string/title_activity_sign_up_view"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".search.view.search_view"></activity>
+        <activity android:name=".search.view.SearchView"></activity>
     </application>
 
 </manifest>

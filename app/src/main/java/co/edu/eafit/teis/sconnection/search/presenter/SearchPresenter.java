@@ -12,20 +12,20 @@ import java.util.ArrayList;
 import co.edu.eafit.teis.sconnection.R;
 import co.edu.eafit.teis.sconnection.Utils.ResponseHandler;
 import co.edu.eafit.teis.sconnection.connection.ClientDao;
-import co.edu.eafit.teis.sconnection.search.view.search_view;
+import co.edu.eafit.teis.sconnection.search.view.SearchView;
 
 
 /**
  * Created by ccr185 on 11/8/16.
  */
 
-public class search_presenter implements ResponseHandler{
+public class SearchPresenter implements ResponseHandler{
 
     ClientDao cd;
-    search_view ctx;
+    SearchView ctx;
     String filter;
 
-    public search_presenter(search_view ctx){
+    public SearchPresenter(SearchView ctx){
         cd =  new ClientDao(ctx, this);
     }
 
