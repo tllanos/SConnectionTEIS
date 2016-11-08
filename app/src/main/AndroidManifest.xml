@@ -15,6 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".search.view.search_view"></activity>
         <activity
             android:name=".signup.view.SignUpView"
             android:label="@string/title_activity_sign_up_view"
