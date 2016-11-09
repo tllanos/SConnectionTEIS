@@ -5,7 +5,7 @@
     <string name="user_name_et">Username</string>
     <string name="user_password_et">Password</string>
     <string name="client_type_tv">Client type</string>
-    <string name="user_rb">User</string>
+    <string name="user_rb">Are you a provider?</string>
     <string name="provider_rb">Provider</string>
     <string name="register_b">Register</string>
 
