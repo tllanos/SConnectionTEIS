@@ -10,9 +10,9 @@ import co.edu.eafit.teis.sconnection.search.view.SearchView;
 
 public class LoginPresenter implements ResponseHandler
 {
-    private AppCompatActivity ctx;
+    private LoginView ctx;
 
-    public LoginPresenter(AppCompatActivity ctx) {
+    public LoginPresenter(LoginView ctx) {
         this.ctx = ctx;
     }
 
@@ -28,6 +28,6 @@ public class LoginPresenter implements ResponseHandler
 
     public void onResponse(String response)
     {
-        ((LoginView)ctx).SignInSuccess();
+        ctx.SignInSuccess();
     }
 }
