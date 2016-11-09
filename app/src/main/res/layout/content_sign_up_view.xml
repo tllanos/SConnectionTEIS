@@ -44,26 +44,6 @@
         android:id="@+id/user_password_et"
         android:hint="@string/user_password_et" />
 
-    <RadioButton
-        android:text="@string/user_rb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
-        android:id="@+id/user_rb"
-        android:layout_below="@+id/client_type_tv"
-        android:layout_alignStart="@+id/user_password_et"
-        android:textSize="18sp" />
-
-    <RadioButton
-        android:text="@string/provider_rb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/user_rb"
-        android:layout_alignStart="@+id/user_rb"
-        android:layout_marginTop="17dp"
-        android:id="@+id/provider_rb"
-        android:textSize="18sp" />
-
     <Button
         android:text="@string/register_b"
         android:layout_width="wrap_content"
@@ -79,7 +59,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/client_type_tv"
         android:textSize="24sp"
-        android:layout_below="@+id/user_password_et"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp" />
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/user_name_tv" />
+
+    <CheckBox
+        android:text="Are you a provider?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="57dp"
+        android:id="@+id/checkBox"
+        android:layout_below="@+id/client_type_tv"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

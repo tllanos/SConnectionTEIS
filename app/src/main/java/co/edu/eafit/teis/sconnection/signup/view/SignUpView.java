@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
@@ -19,31 +20,20 @@ public class SignUpView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up_view);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);;
+    }
+
+    private void callPresenter(View view) {
 
         final EditText username = (EditText) findViewById(R.id.user_name_et);
         final EditText password = (EditText) findViewById(R.id.user_password_et);
-        final RadioButton user_rb = (RadioButton) findViewById(R.id.user_rb);
+        final CheckBox cb = (CheckBox) findViewById(R.id.checkBox);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                callPresenter(
-                        username.getText().toString(),
-                        password.getText().toString(),
-                        user_rb.isChecked()
-                );
-            }
-        });
-    }
-
-    private void callPresenter(String username, String password, boolean isUser) {
         SignUpPresenter sup = new SignUpPresenter(
                 this,
-                username,
-                password,
-                isUser
+                username.getText().toString(),
+                password.getText().toString(),
+                !cb.isChecked()
         );
         sup.doSignUp();
     }
