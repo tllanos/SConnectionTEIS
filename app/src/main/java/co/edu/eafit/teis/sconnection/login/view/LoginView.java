@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import co.edu.eafit.teis.sconnection.R;
+import co.edu.eafit.teis.sconnection.search.view.SearchView;
 import co.edu.eafit.teis.sconnection.signup.view.SignUpView;
 
 public class LoginView extends AppCompatActivity {
@@ -18,7 +19,7 @@ public class LoginView extends AppCompatActivity {
 
     public void onButtonClick(View view){
 
-        Intent i = new Intent(this, SignUpView.class);
+        Intent i = new Intent(this, SearchView.class);
         startActivity(i);
     }
 }

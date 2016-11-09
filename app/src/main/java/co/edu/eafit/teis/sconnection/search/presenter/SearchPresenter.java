@@ -24,8 +24,10 @@ public class SearchPresenter implements ResponseHandler{
     ClientDao cd;
     SearchView ctx;
     String filter;
+    ArrayAdapter arrayAdapter;
 
     public SearchPresenter(SearchView ctx){
+        this.ctx = ctx;
         cd =  new ClientDao(ctx, this);
     }
 
@@ -44,11 +46,21 @@ public class SearchPresenter implements ResponseHandler{
             for(int i = 0; i < array.length(); i++){
                 arrayList.add(array.getJSONObject(i).toString());
             }
-            ArrayAdapter arrayAdapter = new ArrayAdapter<String>(
+            JSONObject o = null;
+            ArrayList<String> prov_names = new ArrayList<>();
+            for(String ss : arrayList){
+                try {
+                    o = new JSONObject(ss);
+                    prov_names.add(o.getString("name"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+            arrayAdapter = new ArrayAdapter<String>(
                     ctx,
                     R.layout.list_item,
                     R.id.providerDetail,
-                    arrayList);
+                    prov_names);
             arrayAdapter.getFilter().filter(filter);
             ctx.getListView().setAdapter(arrayAdapter);
         } catch (JSONException e) {
