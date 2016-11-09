@@ -1,5 +1,7 @@
 package co.edu.eafit.teis.sconnection.search.view;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +34,10 @@ public class SearchView extends AppCompatActivity {
 
     public void onButtonClick(View view){
         sp.search(et.getText().toString());
+    }
+
+    public void onItemClick(View view) {
+        sp.alert();
     }
 
     public ListView getListView(){

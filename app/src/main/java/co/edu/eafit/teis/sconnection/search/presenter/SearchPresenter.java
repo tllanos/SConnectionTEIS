@@ -1,6 +1,8 @@
 package co.edu.eafit.teis.sconnection.search.presenter;
 
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.widget.ArrayAdapter;
 
 import org.json.JSONArray;
@@ -34,6 +36,19 @@ public class SearchPresenter implements ResponseHandler{
     public void search(String filter){
         this.filter = filter;
         cd.sendSearchRequest();
+    }
+
+    public void alert(){
+        AlertDialog alertDialog = new AlertDialog.Builder(ctx).create();
+        alertDialog.setTitle("Enhorabuena");
+        alertDialog.setMessage("Tocaste un item de la lista");
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
     }
 
     @Override
