@@ -43,7 +43,7 @@ public class SignUpView extends AppCompatActivity {
                 this,
                 username,
                 password,
-                !isUser
+                isUser
         );
         sup.doSignUp();
     }

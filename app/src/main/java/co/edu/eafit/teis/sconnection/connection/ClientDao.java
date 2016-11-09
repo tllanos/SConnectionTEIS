@@ -31,22 +31,23 @@ public class ClientDao {
     public void sendLoginRequest(Client client) {
         String url = "https://sc-b.herokuapp.com/api/v1/users/?login=true&name=" +
                 client.getName() + "&password=" + client.getPasswd();
-        sendRequest(url);
+        sendRequest(url, true);
     }
 
     public void sendSignUpRequest(Client client) {
-        String url = "https://sc-b.herokuapp.com/api/v1/users/name=" + client.getName() +
+        String url = "https://sc-b.herokuapp.com/api/v1/users/?name=" + client.getName() +
                 "&user_t=" + client.getType() + "&password=" + client.getPasswd();
-        sendRequest(url);
+        sendRequest(url, false);
     }
 
     public void sendSearchRequest() {
         String url = "https://sc-b.herokuapp.com/api/v1/users/?only=provider";
-        sendRequest(url);
+        sendRequest(url, true);
     }
 
-    private void sendRequest(String url) {
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+    private void sendRequest(String url, boolean get) {
+        StringRequest stringRequest = new StringRequest(
+                get ? Request.Method.GET : Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
