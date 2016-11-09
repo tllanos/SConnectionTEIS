@@ -51,7 +51,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
-        android:id="@+id/register_b" />
+        android:id="@+id/register_b"
+        android:onClick="callPresenter"/>
 
     <TextView
         android:text="@string/client_type_tv"
